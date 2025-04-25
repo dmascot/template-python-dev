@@ -1,0 +1,70 @@
+{
+    "name": "python",
+    "build": {
+      "dockerfile": "Dockerfile",
+    },
+    "runArgs": [ "--hostname","python-dev"],
+    "workspaceFolder": "/vscode/workspace",
+    "mounts": [
+    "source=${localWorkspaceFolder},target=/vscode/workspace,type=bind"
+    ],
+    "onCreateCommand": ".devcontainer/on-create.sh",
+    "customizations": {
+        "vscode": {
+          "extensions": [
+            "streetsidesoftware.code-spell-checker",
+            "esbenp.prettier-vscode",
+            "eamodio.gitlens",
+            "codezombiech.gitignore",
+            "fabiospampinato.vscode-diff",
+            "ms-python.python",
+            "ms-python.isort",
+            "ms-python.vscode-pylance",
+            "ms-python.pylint",
+            "DavidAnson.vscode-markdownlint",
+            "shd101wyy.markdown-preview-enhanced",
+            "ms-python.black-formatter",
+            "ms-azuretools.vscode-docker",
+            "yzhang.markdown-all-in-one"
+        ],
+          "settings": {
+            "terminal.integrated.defaultProfile.linux": "bash",
+            "[markdown]": {
+              "editor.codeActionsOnSave": {
+                "source.fixAll.markdownlint": "always"
+              },
+              "editor.formatOnPaste": true,
+              "editor.formatOnSave": true
+            },
+            "[python]": {
+              "editor.codeActionsOnSave": {
+                "source.organizeImports": "always"
+              },
+              "editor.defaultFormatter": "ms-python.black-formatter",
+              "editor.formatOnPaste": false,
+              "editor.formatOnSave": true
+            },
+            "breadcrumbs.enabled": false,
+            "cSpell.language": "en-GB",
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.formatOnPaste": false,
+            "editor.formatOnSave": true,
+            "editor.minimap.enabled": false,
+            "editor.tabCompletion": "on",
+            "files.exclude": {
+              "**/.DS_Store": true,
+              "**/.git": true,
+              "**/Thumbs.db": true
+            },
+            "files.trimTrailingWhitespace": true,
+            "git.autofetch": true,
+            "isort.args": ["--profile", "black"],
+            "python.languageServer": "Pylance",
+            "python.terminal.activateEnvironment": false,
+            "pylint.showNotifications": "onWarning",
+            "pylint.args": [
+              "--load-plugins=pylint_django",
+              "--django-settings-module=config.settings"
+            ],
+            "python.testing.pytestEnabled": true
+  }
